@@ -1,0 +1,390 @@
+Getting Started with Zelda 1 Access
+by G-Rad
+
+This guide walks you through installing the mod, launching it for
+the first time, creating your first save file (the part most guides
+skip because sighted players just see the screens), playing the
+game, and making the most of the accessibility features. If you've
+already read the ReadMe, the installation section will look
+familiar -- but the rest is new ground.
+
+
+PART 1: WHAT YOU NEED
+=====================
+
+Before installing, make sure you have:
+
+1. The accessibility build of BizHawk. Download from:
+   https://github.com/Lethal-Lawnmower/BizHawk/releases/tag/v1.0.0-accessibility
+   Extract it anywhere (Desktop, Documents, a Games folder -- the
+   mod doesn't care where it lives).
+
+2. A Zelda 1 ROM (the original NES game). You'll need to provide
+   this yourself; it isn't included for legal reasons.
+
+3. NVDA is the recommended screen reader. Jaws or any other Tolk-
+   compatible reader will also work. The mod speaks through
+   whichever reader is running.
+
+4. This Zelda 1 Access package, which contains:
+   nvdaControllerClient64.dll, Tolk.dll, SoundBridge.bat, and the
+   Zelda1 Access folder.
+
+
+PART 2: INSTALLATION
+====================
+
+Step 1: Place the DLLs in BizHawk's root folder.
+nvdaControllerClient64.dll and Tolk.dll both belong directly in
+your BizHawk folder (the one with EmuHawk.exe). These let the mod
+speak through your screen reader.
+
+Step 2: Copy the entire "Zelda1 Access" folder into BizHawk's "Lua"
+folder. The Lua folder lives inside the BizHawk folder. After this
+step, the path looks like:
+   YourBizHawkFolder\Lua\Zelda1 Access\
+
+Step 3: Open the "Zelda1 Access" folder you just copied. Find the
+file called "SoundBridge.bat" and press Enter on it (or double-
+click). A new window opens titled "Zelda1Access Sound Bridge" and
+you'll hear:
+   "Zelda1Access Sound Bridge ready."
+That's the audio engine. Leave that window running in the
+background -- it has to stay open the whole time you're playing.
+If you close it, the mod goes silent.
+
+Step 4: Launch BizHawk (EmuHawk.exe).
+
+Step 5: In BizHawk, open your Zelda 1 ROM. The File menu has an
+"Open ROM" option, or you can press Ctrl+O.
+
+Step 6: Once Zelda is loaded and running, open the Lua Console.
+Tools menu > Lua Console, or press Alt+L on most setups.
+
+Step 7: In the Lua Console, go to Script > Open Script (or press
+Ctrl+O while focused on the Lua Console). Navigate to the Zelda1
+Access folder inside BizHawk\Lua and select "Zelda1Access.lua".
+
+If everything worked, you'll hear "Zelda 1 Access loaded." followed
+by the Z1 secret-revealed chime. That's your confirmation that the
+script is running and the audio bridge is talking to it.
+
+
+PART 3: REGISTERING YOUR NAME (CREATING A SAVE FILE)
+====================================================
+
+This is the part that's usually invisible without sight. Z1 makes
+you register a name before you can start a new game.
+
+After you load Zelda1Access.lua, the game lands on the title
+screen with the Zelda 1 theme playing. The title screen doesn't
+advance on its own -- press Enter (Start) to move into the File
+Select screen. The mod then speaks the screen name and the
+currently highlighted slot, for example:
+   "File select."
+   "File 1 is empty."
+
+The five options on this screen, top to bottom:
+   File 1
+   File 2
+   File 3
+   Register your name
+   Elimination mode
+
+Important: on a fresh install with no saved games, only "Register
+your name" and "Elimination mode" can be confirmed. The three empty
+file slots can be cycled past but won't respond when you press
+Start on them.
+
+Navigation here uses the GAME'S buttons, not arrow keys:
+   Select (Spacebar by default): cycle to the next option.
+   Start  (Enter by default):    confirm the highlighted option.
+
+Each Select press fires a fresh announcement of the new highlight.
+
+To register a name:
+
+1. Press Spacebar (Select) until you hear "Register your name."
+
+2. Press Enter (Start). You'll hear "Register your name." again --
+   you're on the slot-pick step now.
+
+3. Slot choices here:
+   File 1
+   File 2
+   File 3
+   End
+
+   Press Spacebar to cycle to the slot you want to register a name
+   into, then press Enter to enter the character grid for that
+   slot.
+
+   Useful: pressing Home on any slot speaks the name currently
+   registered in that slot (or that it's blank). Handy for
+   hearing what's already saved before you overwrite it.
+
+4. The character grid has letters A through Z, digits 0 through 9,
+   a space, and a few punctuation marks. Navigation switches to
+   the D-pad here:
+   Arrow keys     Move through the grid; each move announces the
+                  character you're now on.
+   A button (X)   Add the highlighted character to the name.
+
+   The name has 8 character slots; the game accepts shorter names
+   too. There's no audible "name committed" confirmation -- you
+   just type and trust the count.
+
+5. When the name is typed, press Spacebar (Select) until you reach
+   "End" on the slot pick, then press Enter (Start). THIS step is
+   what actually confirms and saves your registered name -- not
+   pressing Start on the slot during typing. Without cycling to End
+   and pressing Start, the name doesn't stick.
+
+6. You're returned to the File Select screen. Press Spacebar to
+   cycle to the file slot you just registered. The mod announces
+   it with name and stats, e.g.:
+   "File 1, LINK, 3 hearts, Quest 1, 0 deaths."
+
+7. Press Enter (Start) with that slot highlighted to begin the
+   game.
+
+For Quest 2: either beat Quest 1 first, or register a name spelled
+exactly "ZELDA" -- the classic Easter egg starts you on Quest 2
+directly.
+
+
+PART 4: BASIC GAMEPLAY CONTROLS
+===============================
+
+Default keyboard mapping:
+   Arrow keys   Move Link
+   X            A button (sword / use A item)
+   Z            B button (use selected B item)
+   Spacebar     Select (pause)
+   Enter        Start (open inventory)
+
+These are BizHawk defaults; remap them via BizHawk's Config menu
+if you prefer a controller or different keys.
+
+When you move Link you'll hear:
+- A footstep sound on each step.
+- A different-pitched bump sound if you walk into a wall or
+  obstacle. The bump repeats every quarter-second or so while you
+  keep pressing into it, so you can tell whether you're stuck.
+
+When something on the screen is worth your attention:
+- Enemy radar pings -- spatial audio that places the enemy left,
+  right, or center depending on its position.
+- Item beacons -- a different tone for items on the floor.
+
+
+PART 5: INFORMATION SHORTCUTS
+=============================
+
+These hotkeys ask the game about your current state at any time.
+They work during normal gameplay, not inside menus.
+
+   L or Insert    Where am I? Speaks overworld coordinates, the
+                  dungeon name and room, the cave name, or
+                  "Dungeon basement" for cellar rooms.
+   G              Rupee count.
+   B              Bomb count.
+   K              Key count.
+   H              Hearts -- speaks current of max, e.g. "3 of 3
+                  hearts" or "2 and a half of 5 hearts."
+   Semicolon ;    What's my B item?
+   Apostrophe '   What's my A item? (which sword you have)
+   D              Repeat the last spoken dialog. Useful if a
+                  Moblin or Old Man said something and your screen
+                  reader talked over it.
+   M              Tile probe -- speaks Link's exact tile within
+                  the current screen. Mostly for navigation
+                  debugging but handy for planning routes.
+
+
+PART 6: PATHFINDING AND ENTITIES
+================================
+
+"Entities" are things on the current screen worth navigating to:
+enemies, items on the floor, doors, cave entrances, shop wares.
+The mod tracks them and lets you cycle through.
+
+   Page Up    Previous entity.
+   Page Down  Next entity.
+   Home       Repeat the currently selected entity.
+   End        "How do I get there?" -- speaks a path of cardinal
+              directions from where you stand to the selected
+              entity. For example: "South 4, East 7, North 2."
+
+The mod also auto-pings the closest enemy or selected item on a
+regular interval, so you have spatial awareness even without
+pressing any shortcut.
+
+
+PART 7: WAYPOINTS
+=================
+
+Waypoints are places you've marked yourself -- a fairy fountain
+you want to come back to, a hidden cave entrance, the location of
+a heart container you've spotted but haven't retrieved.
+
+   Shift + /        Add a waypoint at Link's current tile. A
+                    dialog asks for a label; type it and press
+                    Enter, or just press Enter for the default
+                    "Waypoint N" name.
+   Comma (,)        Cycle to the previous waypoint on this screen.
+   Slash (/)        Cycle to the next waypoint.
+   Period (.)       Navigate to the selected waypoint -- same
+                    cardinal-direction path as End gives for
+                    entities.
+   Shift + M        Relabel the selected waypoint.
+   Shift + Comma    Remove the selected waypoint (yes/no dialog).
+   Shift + Period   Clear ALL waypoints (yes/no dialog).
+
+Waypoints save to disk, so they survive a BizHawk restart. They're
+keyed by screen -- a waypoint on F8 doesn't appear when you walk
+into D3.
+
+
+PART 8: THE INVENTORY SUBSCREEN
+===============================
+
+Press Enter (Start) to open the inventory. The mod announces
+"Inventory Menu." and then reads the selected B item.
+
+While the inventory is open:
+   Up / Down arrow      Move the B-item cursor between rows.
+   Left / Right arrow   Move within the current row; each move
+                        announces the new selection.
+   Page Up / Page Down  Cycle through owned NON-selectable
+                        treasures: Raft, Book of Magic, Ring,
+                        Stepladder, Magic Key, Power Bracelet,
+                        plus the current dungeon's Map and Compass
+                        if you're inside a dungeon.
+   Home                 Triforce status -- which pieces you have.
+   End                  Shield status -- "Wood Shield" or "Magical
+                        Shield." Useful because Like-Likes can eat
+                        your Magical Shield silently; this is your
+                        only reliable way to notice.
+   L or Insert          Quest number -- "Quest 1" or "Quest 2."
+   Shift + End          Open the Save / Continue / Retry screen
+                        (the equivalent of the controller-2 Up+A
+                        trick). Cycle with Select (Spacebar),
+                        commit with Start (Enter).
+
+Press Enter (Start) again to close the inventory.
+
+
+PART 9: THE ACCESSIBILITY MENU
+==============================
+
+Press Delete at any time to open the accessibility menu. The game
+pauses while it's open. Delete or Escape again to close.
+
+Inside the menu:
+   Up / Down arrow      Move between settings.
+   Left / Right arrow   Adjust the highlighted setting.
+
+Every setting explained:
+
+Overworld coordinate format
+   How screen coordinates are announced on the overworld.
+   Numeric:     "Screen 3, 8."   (column 3, row 8)
+   Spreadsheet: "Screen C, 8."   (column C = third, row 8)
+
+Dungeon coordinate format
+   Same idea but for dungeon room coordinates. Independent of the
+   overworld setting -- you can use letters in dungeons and
+   numbers on the overworld if that helps keep them separate.
+
+Footsteps  (on/off and volume)
+   The synthesized step sound on each tile of movement. Off makes
+   movement silent.
+
+Wall bumps  (on/off and volume)
+   The thud heard when Link can't move that direction. Off makes
+   wall collisions silent; you'd only notice them by your screen
+   reader saying nothing for movement.
+
+Item beacons  (on/off and volume)
+   Audio pings for collectible items on the floor.
+
+Item drop linger
+   How long dropped items (hearts, rupees, fairies) stick around.
+   Normal:  Vanilla Z1 timing.
+   Times 2: Items hang around twice as long.
+   Times 4: Four times as long.
+   Never:   Items never disappear until you pick them up. Best
+            for accessibility; gives you time to walk over.
+
+Enemy radar  (on/off, volume, and speed)
+   The spatial audio ping tracking the nearest (or locked) enemy.
+   Speed sets how often pings fire.
+
+Enemy auto lock
+   When ON, Link automatically faces the currently-selected enemy
+   so your sword swing connects. Cycle to an enemy with Page Up /
+   Page Down, swing your sword, and you'll hit them regardless of
+   which way you were last walking. Turn OFF if you'd rather aim
+   manually.
+
+Freeze enemies
+   When ON, enemies on the current screen stop moving and stop
+   attacking. Your sword still hits and kills them normally -- so
+   you can clear a room methodically without dodging. Wall
+   Masters, boulders, and dungeon fire get removed entirely while
+   freeze is on (pinning those in place would create soft-locks),
+   and multi-segment enemies like Lamnola use a special
+   position-only pin so every segment stays attackable.
+
+Suppress boulders / fire / Wall Masters / Traps / Moldorm /
+Peahats
+   Per-hazard switches that remove a single enemy type from the
+   screen without affecting anything else. Useful if a specific
+   obstacle is frustrating but you don't want to freeze the
+   whole room. These options hide from the menu when "Freeze
+   enemies" is on (because freeze already handles them).
+
+
+PART 10: TIPS FOR PLAYING
+=========================
+
+- The secret-revealed chime plays every time the Lua script loads.
+  If you hear it, the mod is alive. If you reload and don't hear
+  it, check that the SoundBridge.bat window is still running.
+
+- Save often! Use Shift+End from the inventory to reach the save
+  screen at any time. Cycle Continue / Save / Retry with Select
+  (Spacebar); commit with Start (Enter).
+
+- "New room" vs "Visited room" announcements help you map a
+  dungeon mentally as you explore. The mod remembers visits per
+  save slot, so they survive a BizHawk restart.
+
+- The L (or Insert) hotkey gives the dungeon name once you're
+  inside. Without the dungeon map, that's all you'll hear; with
+  the map you also get the room coordinate.
+
+- The C hotkey (only inside dungeons) tells you where the boss
+  room is, gated by your compass. Without a compass: silent.
+  Compass only: speaks direction ("Boss room is in the Northwest
+  direction"). Compass plus map: speaks the exact coordinate.
+
+- In caves and dungeons, walking into an Old Man or hint NPC
+  triggers their dialog automatically. Use D to replay the last
+  dialog if your screen reader talked over it.
+
+- Use waypoints liberally. A waypoint at the entrance to a
+  dungeon is great for "find my way back out" once you've
+  wandered deep.
+
+- The tile probe (M) helps when learning a new room's geometry.
+  Once you know the tile coords of features (a stair, a doorway,
+  a push block), you can build a mental map.
+
+
+That's everything you need to start playing. The mod tries to
+stay out of your way -- it speaks when there's news worth hearing
+and stays silent otherwise. Feedback welcome.
+
+Have fun. Save Hyrule.

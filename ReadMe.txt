@@ -2,17 +2,19 @@ Zelda 1 Access
 by G-Rad
 
 Zelda 1 Access adds accessibility features to the NES game The Legend of Zelda so it can be played with a screen reader.
-This release will allow you to play through Quest 1 in it's entirety, with all intents on update and including quest 2 in the future.
+
+This release will allow you to play through both quests to completion. 
 
 
 Features:
 - Spoken menus and dialog
-- Spoken inventory subscreen with treasure cycling
+- Spoken inventory sub-screen with treasure cycling
 - Pathfinding and navigation across overworld, dungeons, caves, and basements
 - Spatial enemy radar and item beacons
 - Footstep and wall-bump audio cues
 - Player-placed waypoints
 - Accessibility menu for toggling features and adjusting volumes
+- Emulated Second controller Save Screen shortcut
 
 This requires BizHawk.  If you don't have it, download it here:
 https://github.com/Lethal-Lawnmower/BizHawk/releases/tag/v1.0.0-accessibility
@@ -20,10 +22,11 @@ https://github.com/Lethal-Lawnmower/BizHawk/releases/tag/v1.0.0-accessibility
 Installation:
 1. Place `nvdaControllerClient64.dll` and `Tolk.dll` in the root of your BizHawk folder.
 2. Copy the `Zelda1 Access` folder into BizHawk's `Lua` folder.
-3. Run `SoundBridge.bat`.
+3. Run `SoundBridge.bat` from the newly located Zelda1Access Folder.
 4. Start BizHawk and load The Legend of Zelda.
 5. Once Zelda is running, open the Lua Console and load `Zelda1Access.lua`.
-6. Play.
+6.  If you loaded it successfully, you will hear the Secret revealed chime.
+7. Play.
 
 Notes:
 - `nvdaControllerClient64.dll` and `Tolk.dll` must be in the root BizHawk directory.
@@ -32,15 +35,15 @@ Notes:
 - The sound bridge handles both screen-reader speech and synthesized game audio (footsteps, bumps, radar pings, item beacons).
 
 In-Game Controls:
-- Arrow keys or D-Pad: Move Link
-- Assigned `A` button: Sword / use A item
-- Assigned `B` button: Use selected B item
-- `Spacebar` or assigned `Select` button: Pause Game
-- `Enter` or assigned `Start` button: Open inventory
+- D-Pad, Defaults to Arrow keys: Move Link
+- `A` button, Defaults to `X` on Keyboard: Use Sword
+- `B` button, Defaults to `Z` on Keyboard: Use Secondary item
+- `Select Button, Defaults to `Spacebar` on Keyboard: Pause Game
+- `Start Button, Defaults to `Enter` on keyboard: Open inventory
 
 Accessibility Shortcuts:
 - `Delete`: Open Accessibility Menu
-- `Insert`: Announce current location (screen, dungeon, cave, or basement)
+- `L` or `Insert`: Announce current location (screen, dungeon, cave, or basement)
 - `G`: Announce current Rupees
 - `B`: Announce current Bombs
 - `K`: Announce current Keys
@@ -67,11 +70,13 @@ Inventory Subscreen:
 - `Page Up` / `Page Down`: Cycle through owned treasures (Raft, Book, Ring, Stepladder, Master Key, Power Bracelet, plus current dungeon's Map and Compass)
 - `Home`: Announce current Triforce pieces
 - `End`: Announce Current Shield
-- `Insert`: Announce current Quest
+- `L` or `Insert`: Announce current Quest
+- `Shift` + `End`: Go to Save Screen
+
 
 Accessibility Menu:
 - `Up` / `Down`: Move between menu items
 - `Left` / `Right`: Adjust selected setting
 - `Delete` or `Escape`: Close menu
 
-Settings include overworld and dungeon coordinate format, footsteps, wall bumps, item beacons, item drop linger, enemy radar, enemy auto-lock, freeze enemies, and targeted suppressions for boulders, fire, and Wall Masters.
+Settings include overworld and dungeon coordinate format, footsteps, wall bumps, item beacons, item drop linger, enemy radar, enemy auto-lock, freeze enemies, and targeted suppression for some enemies.
